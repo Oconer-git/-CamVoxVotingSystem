@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Candidacy Form</title>
+    <link rel="stylesheet" href="styles.css"> 
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            background-image: url('img/bg.png');
+            background-size: cover;
+            margin: 0; /* Remove default margin */
+            padding: 0; /* Remove default padding */
+            font-family: 'Roboto', sans-serif; /* Apply Roboto font to the entire document */
+            color: #ffffff; /* Set default text color */
+        }
+
+        .title h1 {
+            font-size: 40px;
+            text-align: center;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .container {
+            width: 100%;
+            margin-top: 0 auto;
+            text-align: center; 
+        }
+
+        .header-image {
+            width: 50%; /* Adjust the width as needed */
+            max-width: 300px; /* Set a maximum width to maintain responsiveness */
+            height: auto; /* Maintain aspect ratio */
+            display: block; /* Ensures the image is a block element */
+            margin: 0 auto; /* Center the image horizontally */
+            padding-top: 15px;
+        }
+
+        .form {
+            padding: 10px; /* Add padding */
+            max-width: 1000px;
+            margin: 0 auto; /* Center the form horizontally */
+            border-radius: 8px; /* Add border radius for a rounded look */
+            display: flex;
+            padding-top: 10px;
+            flex-direction: column;
+        }
+
+        .platform {
+            padding: 10px; /* Add padding */
+            max-width: 1000px;
+            margin: 0 auto; /* Center the form horizontally */
+            border-radius: 8px; /* Add border radius for a rounded look */
+            display: flex;
+            padding-top: 10px;
+            flex-direction: column;
+        }
+
+        .platform-textbox {
+            width: 80%;
+            height: 80px;
+            padding: 10px;
+            margin: 10px;
+            margin-left: 100px;
+            border-radius: 20px;
+            border: 1px solid #7d80e1; /* Set border to transparent */
+            background-image: linear-gradient(to right, #222574, #464892, #030445); /* Gradient colors */
+            color: white; /* Text color */
+            box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .platform-textbox::placeholder {
+            color: #7d80e1; /* Change this to your desired placeholder color */
+        }
+
+        .platform-textbox {
+            resize: vertical; /* Allow vertical resizing */
+        }
+
+        body, textarea {
+            font-family: 'Roboto', sans-serif; /* Apply Roboto font to all elements */
+        }
+
+        .platform-textbox {
+            width: 80%;
+            padding: 10px;
+            margin: 10px;
+            margin-left: 100px;
+            border-radius: 20px;
+            border: 1px solid #7d80e1;
+            background-image: linear-gradient(to right, #222574, #464892, #030445);
+            color: white;
+            box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
+            font-family: 'Roboto', sans-serif; /* Apply Roboto font to textareas */
+            overflow: hidden;
+        }
+
+
+        .txtboxlabel {
+            font-size: 24px; /* Adjust font size */
+            /* No need to specify font-family here, it inherits from body */
+            margin: 10px; /* Reset margin */
+            padding-left: 20px; /* Reset padding */
+        }
+
+        h1 {
+            margin-top: 70px;
+            font-size: 50px;
+        }
+
+        .pos-textbox {
+            width: 80%;
+            padding: 10px;
+            margin: 10px;
+            margin-left: 100px;
+            border-radius: 20px;
+            border: 1px solid #7d80e1; /* Set border to transparent */
+            background-image: linear-gradient(to right, #222574, #464892, #030445); /* Gradient colors */
+            color: white; /* Text color */
+            box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .submit-button {
+            width: 10%;
+            padding: 10px;
+            margin: 10px auto; 
+            margin-top: 30px;
+            margin-bottom: 30px;
+            border-radius: 15px;
+            border: 1px solid #7d80e1;
+            background-image: linear-gradient(to right, #004aad, #cb6ce6);
+            color: white;
+            box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
+            cursor: pointer; 
+            transition: background-color 0.3s ease; 
+            display: block; 
+        }
+
+        .submit-button:hover {
+            background-image: linear-gradient(to right, #cb6ce6, #004aad);
+        }
+
+        .candidate-info {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 20px;
+            border-radius: 5px;
+            background-color: rgba(37, 0, 124, 0.2); /* Transparent background */
+            box-shadow: 0 0 80px rgba(0, 0, 0, 0.7); /* Soft shadow */
+            display: flex;
+            justify-content: space-between; /* To evenly space the sections */
+        }
+
+        #preview-image {
+            max-width: 200px; /* Set the maximum width */
+            max-height: 200px; /* Set the maximum height */
+            display: none;
+            margin-top: 10px; /* Add margin for spacing */
+            border-radius: 50%; /* Add border radius */
+        }
+
+        .info-section input#candidate {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin: 10px;
+            border-radius: 5px;
+            border: 1px solid #7d80e1;
+            background-color: rgba(34, 37, 116, 0.1); /* Adjust alpha channel for transparency */
+            color: white;
+            box-shadow: 0 0 8px rgba(0, 0, 0, 3);
+            margin-left: 0; /* Remove any left margin */
+        }
+
+        /* Align the entire info-section to the left */
+        .info-section {
+            text-align: left;
+            margin-right: 100px;
+            width: 40%; /* Limit the width to avoid excessive expansion */
+        }
+
+        /* Photo container styles */
+        .photo-container {
+            width: 300px;
+            height: 300px;
+            position: relative;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: Arial, sans-serif;
+            overflow: hidden;
+            margin-left: 50px;
+            margin-top: 80px;
+        }
+
+        .upload-button {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            padding: 5px;
+            border-radius: 15px;
+            border: 1px solid #7d80e1;
+            background-image: linear-gradient(to right, #004aad, #cb6ce6);
+            color: white;
+            font-size: 10px;
+            box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        
+        /* Style for the upload button on hover */
+        .upload-button:hover {
+            background-image: linear-gradient(to right, #cb6ce6, #004aad);
+        }
+        .delete-button {
+            padding: 5px;
+            border-radius: 15px;
+            border: 1px solid #7d80e1;
+            background-image: linear-gradient(to right, #004aad, #cb6ce6);
+            color: white;
+            box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            display: none;
+            font-size: 10px;
+        }
+
+        /* Style for the delete button on hover */
+        .delete-button:hover {
+            background-image: linear-gradient(to right, #cb6ce6, #004aad);
+        }
+
+        .textbox::placeholder {
+            color: #7d80e1; /* Change this to your desired placeholder color */
+        }
+
+        .pos-textbox::placeholder {
+            color: #7d80e1; /* Change this to your desired placeholder color */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Your content inside the div -->
+        <img src="img/logo.png" alt="Header Image" class="header-image">
+    </div>
+    <div class="title">
+        <h1>Candidacy Form</h1>
+    </div>
+    <div class="form">
+        <h1 class="txtboxlabel">Position:</h1>
+        <input type="text" class="pos-textbox" placeholder="Enter position">
+    </div>
+
+    <div class="candidate-info">
+        <div class="info-section">
+            <!-- Photo container for the first section -->
+            <div class="photo-container" style="position: relative;">
+            <input type="file" id="upload-photo" accept="image/*" style="display: none;">
+            <label for="upload-photo" class="upload-button">
+                + Upload Photo
+            </label>
+            <img id="preview-image" src="" alt="Preview">
+            <button id="delete-button" class="delete-button" style="position: absolute; bottom: 5px; right: 5px; display: none;">Delete</button>
+        </div>
+        </div>
+        <div class="info-section">
+            <label for="candidate">Student ID:</label>
+            <input type="text" id="candidate" class="textbox" placeholder="Enter Student ID">
+            
+            <label for="candidate">Candidate Fullname:</label>
+            <input type="text" id="candidate" class="textbox" placeholder="Enter fullname">
+
+            <label for="candidate">Candidate Date of Birth:</label>
+            <input type="text" id="candidate" class="textbox" placeholder="Enter date of birth">
+
+            <label for="candidate">Candidate DMMMSU Email Address:</label>
+            <input type="text" id="candidate" class="textbox" placeholder="Enter candidate email address">
+
+            <label for="candidate">Candidate Phone Number:</label>
+            <input type="text" id="candidate" class="textbox" placeholder="Enter candidate phone number">
+
+            <label for="candidate">Candidate College:</label>
+            <input type="text" id="candidate" class="textbox" placeholder="Enter college">
+
+            <label for="gender">Gender:</label><br>
+                <input type="radio" id="male" name="gender" value="male">
+                <label for="male">Male</label><br>
+                <input type="radio" id="female" name="gender" value="female">
+                <label for="female">Female</label><br>
+                <input type="radio" id="other" name="gender" value="other">
+                <label for="other">Other</label>
+        </div>
+    </div>
+
+    <div class="form">
+        <h1 class="txtboxlabel">Partylist:</h1>
+        <input type="text" class="pos-textbox" placeholder="Enter partylist (if applicable)">
+    </div>
+    
+    <div class="platform">
+        <h1 class="txtboxlabel">Platform:</h1>
+        <textarea class="platform-textbox" placeholder="Enter your platform"></textarea>
+    </div>
+    
+    <button type="submit" class="submit-button">Submit</button>
+</body>
+
+<script>
+    // Function to handle the image upload and local storage
+    function handleImageUpload() {
+        const fileInput = document.getElementById('upload-photo');
+        const previewImage = document.getElementById('preview-image');
+
+        fileInput.addEventListener('change', function() {
+            const file = this.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    previewImage.src = e.target.result;
+                    previewImage.style.display = 'block';
+                    // Save the uploaded image to local storage
+                    localStorage.setItem('uploadedImage', e.target.result);
+                }
+                reader.readAsDataURL(file);
+            }
+        });
+
+        // Check if there's an uploaded image in local storage and display it
+        const storedImage = localStorage.getItem('uploadedImage');
+        if (storedImage) {
+            previewImage.src = storedImage;
+            previewImage.style.display = 'block';
+        }
+    }
+
+    function handleImageUpload() {
+        const fileInput = document.getElementById('upload-photo');
+        const previewImage = document.getElementById('preview-image');
+        const deleteButton = document.getElementById('delete-button');
+
+        fileInput.addEventListener('change', function() {
+            const file = this.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    previewImage.src = e.target.result;
+                    previewImage.style.display = 'block';
+                    // Save the uploaded image to local storage
+                    localStorage.setItem('uploadedImage', e.target.result);
+                    deleteButton.style.display = 'block'; // Show delete button
+                }
+                reader.readAsDataURL(file);
+            }
+        });
+
+        // Check if there's an uploaded image in local storage and display it
+        const storedImage = localStorage.getItem('uploadedImage');
+        if (storedImage) {
+            previewImage.src = storedImage;
+            previewImage.style.display = 'block';
+            deleteButton.style.display = 'block'; // Show delete button
+        }
+
+        // Function to handle deleting the uploaded image
+        deleteButton.addEventListener('click', function() {
+            previewImage.src = ''; // Clear the image preview
+            previewImage.style.display = 'none'; // Hide the image preview
+            localStorage.removeItem('uploadedImage'); // Remove from local storage
+            deleteButton.style.display = 'none'; // Hide delete button
+        });
+    }
+    // Call the function when the page loads
+    window.onload = handleImageUpload;
+</script>
+</html>
