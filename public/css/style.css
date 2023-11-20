@@ -130,6 +130,31 @@ input[type=text] {
   border-bottom: 2px solid white;
   background-color: transparent;
   color: aliceblue;
+  margin-left: 16%;
+}
+input[type=texxt] {
+  width: 100%;
+  padding: 10px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: none;
+  border-bottom: 2px solid white;
+  background-color: transparent;
+  color: aliceblue;
+  /* margin-left: 16%; */
+}
+
+input[type=password] {
+  width: 100%;
+  padding: 10px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  /* border: none; */
+  /* border-bottom: 2px solid white; */
+  background-color: transparent;
+  color: aliceblue;
+  margin-left: 16%;
+  margin-top: -12px;
 }
 
 .checkbox {
@@ -165,6 +190,16 @@ h2 {
 .password-input {
   padding: 10px;
   display: block;
+  width: 100%;
+  border-radius: 5px;
+  border: 5px solid white;
+  background-color: transparent;
+  margin-left: 1%;
+  color: white;
+}
+.pass-input {
+  padding: 10px;
+  display: block;
   width: 60%;
   border-radius: 5px;
   border: 5px solid white;
@@ -176,6 +211,234 @@ h2 {
 .password-icon {
   position: absolute;
   right: -50px;
+  top: 50%;
+  cursor: pointer;
+  transform: translate(0, -50%);
+  margin-right: 20%;
+  color: white;
+}
+.pass-icon {
+  position: absolute;
+  right: -50px;
+  top: 50%;
+  cursor: pointer;
+  transform: translate(0, -50%);
+  margin-right: 20%;
+  color: white;
+}
+
+/* -----------------------------------------------------------style2---------------------------------------------------- */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  display: flex;
+  height: 100vh;
+}
+
+#container {
+  box-shadow: 50px 0 50px rgba(0, 0, 0, 0.1);
+  display: flex;
+  width: 100%;
+}
+
+#left-side2 {
+  width: 40%;
+  background-color: #1c1c39;
+  padding: 20px;
+  box-sizing: border-box;
+  position: relative;
+}
+
+#right-side2 {
+  width: 60%;
+  padding: 20px;
+  box-sizing: border-box;
+  background-image: url("img/bg2.png");
+  background-size: cover;
+  background-position: center;
+}
+
+#logo {
+  width: 65%; /* Adjusted to take full width */
+margin-top: -15%;
+  margin-bottom: -25%;
+}
+
+#student-id {
+  width: 70%; /* Adjusted to include padding and margin */
+  padding: 10px;
+  margin-bottom: 20px;
+  box-sizing: border-box;
+  background-color: transparent;
+  color: white;
+  border: 1px solid white; /* Added border for better visibility */
+  margin-left: 16%; /* Adjusted margin */
+  margin-top: 10px;
+}
+
+#continue-button {
+  background-color: #4E4FEB;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  border-radius: 20px;
+  margin-left: 20%; /* Adjusted margin */
+  float: left;
+  margin-top: -20%;
+  width: 60%;
+}
+#next-button {
+  background-color: #4E4FEB;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  border-radius: 20px;
+  margin-left: 20%; /* Adjusted margin */
+  float: left;
+  margin-top: 5%;
+  width: 60%;
+}
+#question-button {
+  background-color: #4E4FEB;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  border-radius: 20px;
+  margin-left: 20%; /* Adjusted margin */
+  float: left;
+  margin-top: 5%;
+  width: 60%;
+}
+#submit-button {
+  background-color: #4E4FEB;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  border-radius: 20px;
+  margin-left: 20%; /* Adjusted margin */
+  float: left;
+  margin-top: 5%;
+  width: 60%;
+}
+
+#register-button {
+  background-color: #4E4FEB;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  border-radius: 20px;
+  margin-left: 20%; /* Adjusted margin */
+  float: left;
+  /* margin-top: 5%; */
+  width: 60%;
+  margin-top: 10px;
+}
+
+#continue-button:hover {
+  background-color: #08acb8;
+}
+#next-button:hover {
+  background-color: #08acb8;
+}
+#question-button:hover {
+  background-color: #08acb8;
+}
+#submit-button:hover {
+  background-color: #08acb8;
+}
+#register-button:hover {
+  background-color: #08acb8;
+}
+
+h2, p {
+  color: white;
+  margin-bottom: 10px;
+  margin-left: 16%; /* Adjusted margin */
+
+  
+}
+
+#puzz {
+  margin-bottom: 10px;
+  text-align: center; /* Centered text */
+  margin-left: 0; /* Adjusted margin */
+  
+}
+
+#puzzle {
+  width: 100%;
+  
+  float: left;
+  margin-top: -16%;
+   /* Adjusted maximum width */
+  margin-bottom: 30px;
+  margin-left: -2%;
+
+  
+}
+a{
+  color: white;
+ 
+}
+#already{
+  margin-top: 15%;
+  margin-left: 28%;
+}
+.password-wrapper {
+  position: relative;
+  margin-top: 20px;
+  background-color: transparent;
+}
+
+.password-input {
+  padding: 10px;
+  display: block;
+  width: 60%;
+  border-radius: 5px;
+  border: 1px solid white;
+  background-color: transparent;
+  margin-left: 1%;
+  color: white;
+}
+
+.password-icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  cursor: pointer;
+  transform: translate(0, -50%);
+  margin-right: 0%;
+  color: white;
+}
+.password-wrapp {
+  position: relative;
+  margin-top: 20px;
+  background-color: transparent;
+}
+
+.pass-input {
+  padding: 10px;
+  display: block;
+  width: 65.5%; 
+  border: 1px solid rgb(255, 255, 255);
+  background-color: transparent;
+  margin-left: 16%;
+  color: white;
+  margin-top: -20px;
+  margin-bottom: 15px;
+
+}
+
+.pass-icon {
+  position: absolute;
+  right: -20px;
   top: 50%;
   cursor: pointer;
   transform: translate(0, -50%);
