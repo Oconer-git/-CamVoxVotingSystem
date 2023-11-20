@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- ===== Link Swiper's CSS ===== -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
+
+    <!-- ===== Fontawesome CDN Link ===== -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+        
+    <!-- ===== CSS ===== -->
+   <style>
+    /* === Google Font Import - Poppins === */
+
+        *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Poppins', sans-serif;
+        
+        }
+
+        body{
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background: #f2f2f2;
+        background-image: url('img/bg.png');
+            background-size: cover;
+            margin: 0; /* Remove default margin */
+            padding: 0; /* Remove default padding */
+            font-family: 'Roboto', sans-serif; /* Apply Roboto font to the entire document */
+            color: #ffffff; /* Set default text color */
+        }
+
+        .container {
+            width: 100%;
+            margin-top: 0 auto;
+            text-align: center; 
+        }
+
+        .header-image {
+            width: 50%; /* Adjust the width as needed */
+            max-width: 300px; /* Set a maximum width to maintain responsiveness */
+            height: auto; /* Maintain aspect ratio */
+            display: block; /* Ensures the image is a block element */
+            margin: 0 auto; /* Center the image horizontally */
+            padding-top: 5px;
+            margin-right: 90%;
+        }
+
+        .title h1 {
+            padding-top: 40px;
+            margin-bottom: 5px;
+            font-size: 40px;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .title h2 {
+            padding-top: 10px;
+            margin-bottom: 5px;
+            font-size: 30px;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .title p {
+            padding: 0px;
+            margin: 0 auto;
+            font-size: 15px;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .title hr {
+            width: 1200px;
+            height: 2px;
+            background: linear-gradient(to right, #004aad, #cb6ce6);
+            border: none;
+            margin: auto;
+            margin-top: 20px;
+        }
+
+        section{
+        position: relative;  
+        height: 400px;
+        width: 1075px;
+        display: flex;
+        align-items: center;
+        }
+
+        .swiper{
+        width: 950px;
+        }
+
+        .card{
+        position: relative;
+        background: linear-gradient(-45deg, #3F2182, #13072E); 
+        border-radius: 20px;
+        margin: 20px 0;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .card .card-content{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 30px;
+        position: relative;
+        z-index: 100;
+        }
+
+        section .card .image{
+        height: 120px;
+        width: 120px;
+        border-radius: 50%;
+        padding: 3px;
+        background: linear-gradient(to right, #004aad, #cb6ce6);
+        }
+
+        section .card .image img{
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        border-radius: 50%;
+        }
+
+        .card .media-icons{
+        position: absolute;
+        top: 10px;
+        right: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        }
+
+        .card .name-position{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 10px;
+        } 
+
+        .name-position .name{
+        font-size: 20px;
+        font-weight: 600;
+        color: #ffffff;
+        }
+
+        .name-position .position{
+        font-size:15px;
+        font-weight: 500;
+        color: #ffffff;
+        }
+
+        .name-position .partylist{
+        font-size:15px;
+        font-weight: 500;
+        color: #ffffff;
+        }
+
+        .card .rating{
+        display: flex;
+        align-items: center;
+        margin-top: 18px;
+        }
+
+        .card .rating i{
+        font-size: 18px;
+        margin: 0 2px;
+        color: #7d2ae8;
+        }
+
+        .card .button{
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        margin-top: 20px;
+        margin-bottom: 30px;
+        }
+
+        .card .button button{
+          background: linear-gradient(to right, #004aad, #cb6ce6); /* Gradient background */
+          outline: none;
+          border: none;
+          color: #fff;
+          padding: 8px 22px;
+          border-radius: 20px;
+          font-size: 14px;
+          transition: all 0.3s ease;
+          cursor: pointer;
+        }
+
+        .button button:hover{
+          background: linear-gradient(to right, #cb6ce6, #004aad);
+        }
+
+        .swiper-pagination{
+        position: absolute;
+        }
+
+        .swiper-pagination-bullet{
+        height: 7px;
+        width: 26px;
+        border-radius: 25px;
+        background: linear-gradient(to right, #004aad, #cb6ce6);
+        }
+
+        .swiper-button-next, .swiper-button-prev{
+        opacity: 0.7;
+        color: #7d2ae8;
+        transition: all 0.3s ease;
+        }
+        .swiper-button-next:hover, .swiper-button-prev:hover{
+        opacity: 1;
+        color: #7d2ae8;
+        }
+
+
+/* CSS for the three-dot button */
+.three-dots-btn {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: flex-end;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #3F2182; /* Set background color */
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #ffffff; /* Add white border */
+}
+
+/* Styling the three-dot icon */
+.three-dots-btn i {
+    font-size: 20px;
+    margin: 0;
+    color: #ffffff; /* Set icon color to white */
+}
+
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(7, 3, 37, 0.7); /* Semi-transparent black */
+  z-index: 9999;
+}
+
+.overlay-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: linear-gradient(-45deg, #3F2182, #13072E); 
+  padding: 20px;
+  border-radius: 15px;
+  text-align: justify;
+}
+
+.close-btn {
+  margin-top: 10px;
+  padding: 5px 10px;
+  background-color: #3F2182;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+   </style>
+    
+     <title>CamVox Voting</title> 
+</head>
+<body>
+    <div class="container">
+        <!-- Your content inside the div -->
+        <img src="img/logo.png" alt="Header Image" class="header-image">
+        <div class="title">
+            <h1>NAME OF ELECTION</h1> <!--from database-->
+            <p>DATE</p> <!--from database-->
+            <h2>POSITION</h2>  <!--from database-->
+            <hr>
+        </div>
+    </div>
+  <section>
+     <!--Start of Card1-->
+    <div class="overlay" id="overlay1">
+      <div class="overlay-content">
+        <!-- Content of the overlay --> <!--FROM DATABASE-->
+        <p>Name: lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum</p> <br><br><br>
+        <p>Address: lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum </p> <br><br><br>
+        <p>Email: lorem ipsum lorem ipsum lorem ipsumlorem ipsum lorem ipsum</p> <br><br><br>
+        <p>Phone Number: lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum </p> <br><br><br>
+        <p>Platform: lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum
+          lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum
+        </p> <br><br><br><br><br><br>
+        <button class="close-btn" onclick="closeOverlay()">Close</button>
+      </div>
+    </div>
+     <!--Start of Card2-->
+     <div class="overlay" id="overlay2">
+      <div class="overlay-content">
+        <!-- Content of the overlay --> <!--FROM DATABASE-->
+        <p>Name: lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum</p> <br><br><br>
+        <p>Address: lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum </p> <br><br><br>
+        <p>Email: lorem ipsum lorem ipsum lorem ipsumlorem ipsum lorem ipsum</p> <br><br><br>
+        <p>Phone Number: lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum </p> <br><br><br>
+        <p>Platform: lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum
+          lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum
+        </p> <br><br><br><br><br><br>
+        <button class="close-btn" onclick="closeOverlay()">Close</button>
+      </div>
+    </div>
+    <!--Start of Card3-->
+    <div class="overlay" id="overlay3">
+      <div class="overlay-content">
+        <!-- Content of the overlay --> <!--FROM DATABASE-->
+        <p>Name: lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum</p> <br><br><br>
+        <p>Address: lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum </p> <br><br><br>
+        <p>Email: lorem ipsum lorem ipsum lorem ipsumlorem ipsum lorem ipsum</p> <br><br><br>
+        <p>Phone Number: lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum </p> <br><br><br>
+        <p>Platform: lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum
+          lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum
+        </p> <br><br><br><br><br><br>
+        <button class="close-btn" onclick="closeOverlay()">Close</button>
+      </div>
+    </div>
+    <!--Start of Card4-->
+    <div class="overlay" id="overlay4">
+      <div class="overlay-content">
+        <!-- Content of the overlay --> <!--FROM DATABASE-->
+        <p>Name: lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum</p> <br><br><br>
+        <p>Address: lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum </p> <br><br><br>
+        <p>Email: lorem ipsum lorem ipsum lorem ipsumlorem ipsum lorem ipsum</p> <br><br><br>
+        <p>Phone Number: lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum </p> <br><br><br>
+        <p>Platform: lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum
+          lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum
+        </p> <br><br><br><br><br><br>
+        <button class="close-btn" onclick="closeOverlay()">Close</button>
+      </div>
+    </div>
+    <!--Start of Card5-->
+    <div class="overlay" id="overlay5">
+      <div class="overlay-content">
+        <!-- Content of the overlay --> <!--FROM DATABASE-->
+        <p>Name: lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum</p> <br><br><br>
+        <p>Address: lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum </p> <br><br><br>
+        <p>Email: lorem ipsum lorem ipsum lorem ipsumlorem ipsum lorem ipsum</p> <br><br><br>
+        <p>Phone Number: lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum </p> <br><br><br>
+        <p>Platform: lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum
+          lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum
+        </p> <br><br><br><br><br><br>
+        <button class="close-btn" onclick="closeOverlay()">Close</button>
+      </div>
+    </div>
+    <!--Start of Card6-->
+    <div class="overlay" id="overlay6">
+      <div class="overlay-content">
+        <!-- Content of the overlay --> <!--FROM DATABASE-->
+        <p>Name: lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum</p> <br><br><br>
+        <p>Address: lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum </p> <br><br><br>
+        <p>Email: lorem ipsum lorem ipsum lorem ipsumlorem ipsum lorem ipsum</p> <br><br><br>
+        <p>Phone Number: lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum </p> <br><br><br>
+        <p>Platform: lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum
+          lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum
+        </p> <br><br><br><br><br><br>
+        <button class="close-btn" onclick="closeOverlay()">Close</button>
+      </div>
+    </div>
+    <!--Start of Card7-->
+    <div class="overlay" id="overlay7">
+      <div class="overlay-content">
+        <!-- Content of the overlay --> <!--FROM DATABASE-->
+        <p>Name: lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum</p> <br><br><br>
+        <p>Address: lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum </p> <br><br><br>
+        <p>Email: lorem ipsum lorem ipsum lorem ipsumlorem ipsum lorem ipsum</p> <br><br><br>
+        <p>Phone Number: lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum </p> <br><br><br>
+        <p>Platform: lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum
+          lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum
+        </p> <br><br><br><br><br><br>
+        <button class="close-btn" onclick="closeOverlay()">Close</button>
+      </div>
+    </div>
+    <!--Start of Card8-->
+    <div class="overlay" id="overlay8">
+      <div class="overlay-content">
+        <!-- Content of the overlay --> <!--FROM DATABASE-->
+        <p>Name: lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum</p> <br><br><br>
+        <p>Address: lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum </p> <br><br><br>
+        <p>Email: lorem ipsum lorem ipsum lorem ipsumlorem ipsum lorem ipsum</p> <br><br><br>
+        <p>Phone Number: lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum </p> <br><br><br>
+        <p>Platform: lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum
+          lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum
+        </p> <br><br><br><br><br><br>
+        <button class="close-btn" onclick="closeOverlay()">Close</button>
+      </div>
+    </div>
+    <!--Start of Card9-->
+    <div class="overlay" id="overlay9">
+      <div class="overlay-content">
+        <!-- Content of the overlay --> <!--FROM DATABASE-->
+        <p>Name: lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum</p> <br><br><br>
+        <p>Address: lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum </p> <br><br><br>
+        <p>Email: lorem ipsum lorem ipsum lorem ipsumlorem ipsum lorem ipsum</p> <br><br><br>
+        <p>Phone Number: lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum </p> <br><br><br>
+        <p>Platform: lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum
+          lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum
+        </p> <br><br><br><br><br><br>
+        <button class="close-btn" onclick="closeOverlay()">Close</button>
+      </div>
+    </div>
+
+    <div class="swiper mySwiper container">
+      <div class="swiper-wrapper content">
+
+        <div class="swiper-slide card">
+          <div class="card-content">
+            <div class="image">
+             <img src="img/default-photo.png" alt=""> <!--from database-->
+            </div>
+
+            <div class="name-position">
+              <span class="name">Candidate Name</span><!--from database-->
+              <span class="position">Position</span><!--from database-->
+              <span class="partylist">Partylist</span><!--from database-->
+            </div>
+
+            <div class="button">
+              <button class="aboutMe">VOTE</button>
+            </div>
+
+            <button class="three-dots-btn" id="overlay1">
+              <i class="fas fa-ellipsis-h"></i>
+            </button>
+          </div>
+        </div>
+
+        
+
+        <div class="swiper-slide card">
+          <div class="card-content">
+            <div class="image">
+             <img src="img/default-photo.png" alt=""> <!--from database-->
+            </div>
+
+            <div class="name-position">
+              <span class="name">Candidate Name</span><!--from database-->
+              <span class="position">Position</span><!--from database-->
+              <span class="partylist">Partylist</span><!--from database-->
+            </div>
+
+            <div class="button">
+              <button class="aboutMe">VOTE</button>
+            </div>
+
+            <button class="three-dots-btn" id="overlay2">
+              <i class="fas fa-ellipsis-h"></i>
+          </button>
+          </div>
+        </div>
+        <div class="swiper-slide card">
+          <div class="card-content">
+            <div class="image">
+             <img src="img/default-photo.png" alt=""> <!--from database-->
+            </div>
+
+            <div class="name-position">
+              <span class="name">Candidate Name</span><!--from database-->
+              <span class="position">Position</span><!--from database-->
+              <span class="partylist">Partylist</span><!--from database-->
+            </div>
+
+            <div class="button">
+              <button class="aboutMe">VOTE</button>
+            </div>
+
+            <button class="three-dots-btn" id="overlay3">
+              <i class="fas fa-ellipsis-h"></i>
+          </button>
+          </div>
+        </div>
+       <div class="swiper-slide card">
+          <div class="card-content">
+            <div class="image">
+             <img src="img/default-photo.png" alt=""> <!--from database-->
+            </div>
+
+            <div class="name-position">
+              <span class="name">Candidate Name</span><!--from database-->
+              <span class="position">Position</span><!--from database-->
+              <span class="partylist">Partylist</span><!--from database-->
+            </div>
+
+            <div class="button">
+              <button class="aboutMe">VOTE</button>
+            </div>
+
+            <button class="three-dots-btn" id="overlay4">
+              <i class="fas fa-ellipsis-h"></i>
+          </button>
+          </div>
+        </div>
+        <div class="swiper-slide card">
+          <div class="card-content">
+            <div class="image">
+             <img src="img/default-photo.png" alt=""> <!--from database-->
+            </div>
+
+            <div class="name-position">
+              <span class="name">Candidate Name</span><!--from database-->
+              <span class="position">Position</span><!--from database-->
+              <span class="partylist">Partylist</span><!--from database-->
+            </div>
+
+            <div class="button">
+              <button class="aboutMe">VOTE</button>
+            </div>
+
+            <button class="three-dots-btn" id="overlay4">
+              <i class="fas fa-ellipsis-h"></i>
+          </button>
+          </div>
+        </div>
+       <div class="swiper-slide card">
+          <div class="card-content">
+            <div class="image">
+             <img src="img/default-photo.png" alt=""> <!--from database-->
+            </div>
+
+            <div class="name-position">
+              <span class="name">Candidate Name</span><!--from database-->
+              <span class="position">Position</span><!--from database-->
+              <span class="partylist">Partylist</span><!--from database-->
+            </div>
+
+            <div class="button">
+              <button class="aboutMe">VOTE</button>
+            </div>
+
+            <button class="three-dots-btn" id="overlay5">
+              <i class="fas fa-ellipsis-h"></i>
+          </button>
+          </div>
+        </div>
+        <div class="swiper-slide card">
+          <div class="card-content">
+            <div class="image">
+             <img src="img/default-photo.png" alt=""> <!--from database-->
+            </div>
+
+            <div class="name-position">
+              <span class="name">Candidate Name</span><!--from database-->
+              <span class="position">Position</span><!--from database-->
+              <span class="partylist">Partylist</span><!--from database-->
+            </div>
+
+            <div class="button">
+              <button class="aboutMe">VOTE</button>
+            </div>
+
+            <button class="three-dots-btn" id="overlay6">
+              <i class="fas fa-ellipsis-h"></i>
+          </button>
+          </div>
+        </div>
+        <div class="swiper-slide card">
+          <div class="card-content">
+            <div class="image">
+             <img src="img/default-photo.png" alt=""> <!--from database-->
+            </div>
+
+            <div class="name-position">
+              <span class="name">Candidate Name</span><!--from database-->
+              <span class="position">Position</span><!--from database-->
+              <span class="partylist">Partylist</span><!--from database-->
+            </div>
+
+            <div class="button">
+              <button class="aboutMe">VOTE</button>
+            </div>
+
+            <button class="three-dots-btn" id="overlay7">
+              <i class="fas fa-ellipsis-h"></i>
+          </button>
+          </div>
+        </div>
+       <div class="swiper-slide card">
+          <div class="card-content">
+            <div class="image">
+             <img src="img/default-photo.png" alt=""> <!--from database-->
+            </div>
+
+            <div class="name-position">
+              <span class="name">Candidate Name</span><!--from database-->
+              <span class="position">Position</span><!--from database-->
+              <span class="partylist">Partylist</span><!--from database-->
+            </div>
+
+            <div class="button">
+              <button class="aboutMe">VOTE</button>
+            </div>
+
+            <button class="three-dots-btn" id="overlay8">
+              <i class="fas fa-ellipsis-h"></i>
+          </button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-pagination"></div>
+  </section>
+
+  <!-- Swiper JS -->
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Initialize Swiper -->
+  <script>
+    var swiper = new Swiper(".mySwiper", {
+      slidesPerView: 3,
+      spaceBetween: 30,
+      slidesPerGroup: 3,
+      loop: true,
+      loopFillGroupWithBlank: true,
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+    });
+ 
+    function toggleOverlay(overlayId) {
+  const overlay = document.getElementById(overlayId);
+  overlay.style.display = overlay.style.display === "block" ? "none" : "block";
+}
+
+// Function to close the overlay based on its ID
+function closeOverlay(overlayId) {
+  const overlay = document.getElementById(overlayId);
+  overlay.style.display = "none";
+}
+
+// Get all elements with the class 'three-dots-btn'
+const threeDotsButtons = document.querySelectorAll(".three-dots-btn");
+
+// Attach click event listeners to each three-dots button
+threeDotsButtons.forEach((button, index) => {
+  const overlayId = `overlay${index + 1}`;
+  const overlay = document.getElementById(overlayId);
+
+  button.addEventListener("click", () => toggleOverlay(overlayId));
+
+  const closeBtn = overlay.querySelector(".close-btn");
+  if (closeBtn) {
+    closeBtn.addEventListener("click", () => closeOverlay(overlayId));
+  }
+});
+  </script>
+
+
+
+
+
+</body>
+</html>
