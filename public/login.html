@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Form</title>
+  <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+    body {
+      background-image: url("img/bg.jpg");
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="left-side">
+    <!-- Content and Logo Goes Here -->
+
+    <img src="img/logoo.png" class="logo" alt="logo" width="50%">
+    <img src="img/welcome.png" class="welcome" alt="welcome" width="30%">
+    <img src="img/keep.png" class="keep" alt="Keep" width="50%">
+    <div class="box box1"></div>
+  </div>
+
+  <div class="right-side">
+    <!-- Login Form Goes Here -->
+    <div class="login-container">
+      <h2 align="left">Sign In</h2>
+      <form class="login-form">
+        <div class="form-group">
+          <label for="username">Student ID</label>
+          <input type="text" id="fname" name="fname">
+        </div>
+
+        <div class="form-group">
+          <label for="password">Password</label>
+          <div class="password-wrapper">
+            <input type="password" id="password" class="password-input" >
+            <i id="togglepassword" class="fa fa-eye password-icon"></i>
+          </div>
+        </div>
+
+        <label class="checkbox">
+          <input type="checkbox" check>
+          Remember me
+        </label class="forgot">
+        <label>
+          <a href="forgot.html">Forgot Password?</a>
+        </label>
+
+        <div class="form-group">
+          <button type="submit">SIGN IN</button>
+          <div id="dont">
+            <p>Dont have an account?<br><a href="register.html" class="clicks">Click Here</a></p>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  <script src="js/script.js"></script>
+</body>
+
+</html>

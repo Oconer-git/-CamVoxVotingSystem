@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style2.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    <style>
+        #right-side {
+            background-image: url("img/bg2.png");
+            background-size: cover;
+            background-position: center;
+        }
+
+       
+    </style>
+    
+</head>
+<body>
+    <div id="container">
+        <div id="left-side">
+            <img id="logo" src="img/logoo.png" alt="Logo">
+            <h2>Create an Account</h2>
+            <p>Let's get started</p>
+            <input type="text" id="student-id" placeholder="Name">
+            <input type="text" id="student-id" placeholder="Email">
+            <input type="text" id="student-id" placeholder="ID NO.">
+            
+            <div class="password-wrapp">
+                <input type="password" id="password" class="pass-input" placeholder="Password">
+                <i id="togglepassword" class="fa fa-eye pass-icon"></i>
+            </div>
+            
+            <button id="register-button" onclick="location.href = 'login.html'">Sign Up</button>
+            <p id="already">Already have an account? <a href="login.html">Log in </a></p>
+        </div>
+
+        <div id="right-side">
+            <!-- Add your content for the right side here -->
+        </div>
+    </div>
+    <script src="js/script.js"></script>
+  
+</body>
+
+</html>
