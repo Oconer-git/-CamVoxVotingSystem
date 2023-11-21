@@ -21,7 +21,26 @@ The following are the endpoints for login and insertion of candidates into the s
    - Description: Inserts a new candidate into the voting system.
 
 ## Request Payload
-Request payload goes here...
+**Request Payload for Login**
+
+```json
+{
+    "id": "string",        // Student ID
+    "pass": "string"       // Deafault Password
+}
+```
+
+**Request Payload for Candidate Insertion**
+
+```json
+{
+    "name" : "",
+    "posName" : "",
+    "partyName" : "",
+    "electioncode" : ""
+}
+```
+
 
 ## Response
 API response goes here...
