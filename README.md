@@ -43,8 +43,59 @@ The following are the endpoints for login and insertion of candidates into the s
 
 
 ## Response
-API response goes here...
+1. **API Login**
+   - Success Response:
 
+      ```json
+      {
+        "status": "success",
+        "message": "Login successful. Welcome, $user['fullname']"
+      }
+      ```
+
+   - Error Response: User not found
+     
+      ```json
+      {
+        "status": "error",
+        "message": "User not found"
+      }
+      ```
+   - Error Response: Invalid Password
+  
+      ```json
+      {
+        "status": "error",
+        "message": "Invalid password"
+      }
+      ```
+
+2. **Candidate Insertion**
+   - Success Response:
+   
+     ```json
+     {
+       "status": "success",
+       "message": "Candidate data inserted successfully"
+     }
+     ```
+   - Error Response: Missing candidate data
+
+     ```json
+     {
+        "status": "error",
+        "message": "Missing candidate data"
+     }
+     ```
+   - Error Response: Error inserting candidate data
+
+     ```json
+     {
+        "status": "error",
+        "message": "Error inserting candidate data"
+     }
+     ```
+     
 ## Usage
 Usage of API...
 
