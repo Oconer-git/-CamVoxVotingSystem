@@ -99,7 +99,7 @@ The following are the endpoints for login and insertion of candidates into the s
 ## Usage
 **LOGIN API**
 1. **Identify API endpoint:**
-   - Determine the endpoint for the login API. In this example, let's use http://localhost/-CamVoxVotingSystem/public/login
+   - Determine the endpoint for the login API. http://localhost/-CamVoxVotingSystem/public/login
      
 2. **Prepare User Credentials**
    - Gather the user's credential, such as Student ID number, and default password.
@@ -109,7 +109,7 @@ The following are the endpoints for login and insertion of candidates into the s
    - Set the request body with the user's credential in JSON format.
 
 4. **Send API Request:**
-   - Use a Postman to make an HTTP request using preferred programming language to sent the request to the API.
+   - Use Postman to make an HTTP request using preferred programming language to sent the request to the API.
 
 5.**Receive API Response:**
    - Capture and parse the API response.
@@ -123,7 +123,6 @@ The following are the endpoints for login and insertion of candidates into the s
 
 
 **INSERT CANDIDATE API**
-
 
 ## License
 For educational purpose only.
