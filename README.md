@@ -124,6 +124,19 @@ The following are the endpoints for login and insertion of candidates into the s
 
 **INSERT CANDIDATE API**
 
+1. **Identify API endpoint:**
+   - Determine the endpoint for the insert candidate API. http://localhost/-CamVoxVotingSystem/public/insert_candidate
+  
+2. **Prepare the Candidate Data:**
+   - Gather the candidate's details such as their name, position, party name and election code.
+
+3. **Send the POST request:**
+   - Send a post request to the API endpoint with the candidate data in JSON format.
+
+4. **Check the respones:**
+
+   - Inspect the response to see if the candidate insertion was successful.
+
 ## License
 For educational purpose only.
 
