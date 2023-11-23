@@ -105,15 +105,20 @@ For educational purpose only.
 
 ## Contacts
 **Front-End Developer Leader: Enrico Zephan A. Valdez**
-   - Email: evaldez10602@student.dmmmsu.edu.ph 
+   - Email: evaldez10602@student.dmmmsu.edu.ph
+     
 **Technical Documents Leader: Justine Raphael C. Necida**
    - Email: justineraphael.necida@student.dmmmsu.edu.ph
+     
 **Full Stack Developer Leader: Milven S. Gabayan**
    - Email: gabayan.allex996@gmail.com
+     
 **Backend Developer Leader: Neils Azer M. Agustin**
    - Email: ba218807@gmail.com
+     
 **Project Management Leader: Donell Carl G. Oconer**
    - Email: donellpie@gmail.com
+     
 **Tester: Aljen Lagarto**
    - Email: aljen.lagarto@student.dmmmsu.edu.ph
 
