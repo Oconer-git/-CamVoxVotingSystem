@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 18, 2023 at 03:17 AM
--- Server version: 10.4.28-MariaDB
--- PHP Version: 8.0.28
+-- Generation Time: Nov 24, 2023 at 05:02 AM
+-- Server version: 10.4.24-MariaDB
+-- PHP Version: 8.1.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -30,10 +30,10 @@ SET time_zone = "+00:00";
 CREATE TABLE `tbcandidate` (
   `candidateID` int(64) NOT NULL,
   `name` varchar(64) NOT NULL,
-  `posName` varchar(64) NOT NULL,
+  `posID` int(64) NOT NULL,
   `partyName` varchar(64) NOT NULL,
   `electioncode` varchar(64) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -48,10 +48,22 @@ CREATE TABLE `tbelect` (
   `endDate` varchar(64) NOT NULL,
   `expTime` varchar(64) NOT NULL,
   `startTime` varchar(64) NOT NULL,
-  `description` int(64) NOT NULL,
+  `description` varchar(200) NOT NULL,
   `posterID` int(64) NOT NULL,
   `passcode` varchar(64) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbpositions`
+--
+
+CREATE TABLE `tbpositions` (
+  `positionID` int(64) NOT NULL,
+  `positionName` varchar(200) NOT NULL,
+  `electionCode` int(64) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -70,7 +82,7 @@ CREATE TABLE `tbrecovery` (
   `answer2` varchar(64) NOT NULL,
   `answer3` varchar(64) NOT NULL,
   `answer4` varchar(64) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -86,7 +98,7 @@ CREATE TABLE `tbresults` (
   `votesNum` int(64) NOT NULL,
   `fromElectID` int(64) NOT NULL,
   `fromCandidateID` int(64) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -105,7 +117,7 @@ CREATE TABLE `tbstuds` (
   `cpnum` varchar(10) DEFAULT NULL,
   `pass` int(3) DEFAULT NULL,
   `college` varchar(33) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `tbstuds`
@@ -180,7 +192,7 @@ ALTER TABLE `tbcandidate`
 -- AUTO_INCREMENT for table `tbelect`
 --
 ALTER TABLE `tbelect`
-  MODIFY `electionID` int(32) NOT NULL AUTO_INCREMENT;
+  MODIFY `electionID` int(32) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `tbresults`
