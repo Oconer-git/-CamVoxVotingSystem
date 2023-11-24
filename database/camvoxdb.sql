@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 24, 2023 at 05:02 AM
+-- Generation Time: Nov 24, 2023 at 05:23 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -161,6 +161,12 @@ ALTER TABLE `tbelect`
   ADD PRIMARY KEY (`electionID`);
 
 --
+-- Indexes for table `tbpositions`
+--
+ALTER TABLE `tbpositions`
+  ADD PRIMARY KEY (`positionID`);
+
+--
 -- Indexes for table `tbrecovery`
 --
 ALTER TABLE `tbrecovery`
@@ -193,6 +199,12 @@ ALTER TABLE `tbcandidate`
 --
 ALTER TABLE `tbelect`
   MODIFY `electionID` int(32) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `tbpositions`
+--
+ALTER TABLE `tbpositions`
+  MODIFY `positionID` int(64) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `tbresults`
