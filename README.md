@@ -21,7 +21,7 @@ The following are the endpoints for login and insertion of candidates into the s
    - Description: Inserts a new candidate into the voting system.
 
 ## Request Payload
-**Request Payload for Login**
+### Request Payload for Login
 
 ```json
 {
@@ -30,7 +30,7 @@ The following are the endpoints for login and insertion of candidates into the s
 }
 ```
 
-**Request Payload for Candidate Insertion**
+### Request Payload for Candidate Insertion
 
 ```json
 {
@@ -43,61 +43,74 @@ The following are the endpoints for login and insertion of candidates into the s
 
 
 ## Response
-1. **API Login**
-   - Success Response:
+Our API follows the JSend specification for structuring JSON responses. This format provides a consistent and predictable structure for success and error responses.
+### API Login
+**Success Response:**
 
-      ```json
+   ```json
       {
         "status": "success",
-        "message": "Login successful. Welcome, $user['fullname']"
+        "data": {
+         "message": "Login successful. Welcome, $user['fullname']"
+        }
       }
-      ```
+   ```
 
-   - Error Response: User not found
+**Error Response:** User not found
      
-      ```json
+   ```json
       {
         "status": "error",
-        "message": "User not found"
+        "data": {
+          "message": "User not found"
+        }
       }
-      ```
-   - Error Response: Invalid Password
+   ```
+**Error Response:** Invalid Password
   
-      ```json
+   ```json
       {
         "status": "error",
-        "message": "Invalid password"
+        "data": {
+          "message": "Invalid password"
+        }
       }
-      ```
+   ```
 
-2. **Candidate Insertion**
-   - Success Response:
+### Candidate Insertion
+**Success Response:**
    
-     ```json
-     {
-       "status": "success",
-       "message": "Candidate data inserted successfully"
-     }
-     ```
-   - Error Response: Missing candidate data
+   ```json
+      {
+        "status": "success",
+        "data": {
+          "message": "Candidate data inserted successfully"
+        }
+      }
+   ```
+**Error Response:** Missing candidate data
 
-     ```json
+   ```json
      {
         "status": "error",
-        "message": "Missing candidate data"
-     }
-     ```
+        "data": {
+          "message": "Missing candidate data"
+        }
+      }
+   ```
    - Error Response: Error inserting candidate data
 
-     ```json
+   ```json
      {
         "status": "error",
-        "message": "Error inserting candidate data"
-     }
-     ```
+        "data": {
+          "message": "Error inserting candidate data"
+        }
+      }
+   ```
      
 ## Usage
-**LOGIN API**
+### LOGIN API
 1. **Identify API endpoint:**
    - Determine the endpoint for the login API. http://localhost/-CamVoxVotingSystem/public/login
      
@@ -115,14 +128,14 @@ The following are the endpoints for login and insertion of candidates into the s
    - Capture and parse the API response.
 
 6. **Handle Success or Error:**
-      - If the status is "sucess", extract the access token for future authenticated requests.
-      - If the status is "error", handle the error message accordingly.
+   - If the status is "sucess", extract the access token for future authenticated requests.
+   - If the status is "error", handle the error message accordingly.
 
 7. **Use Access Token For Authentication:**
-      - If Successful, use the obtained access token in the Authorization header for subsequent requests to access protected resources
+   - If Successful, use the obtained access token in the Authorization header for subsequent requests to access protected resources
 
 
-**INSERT CANDIDATE API**
+### INSERT CANDIDATE API
 
 1. **Identify API endpoint:**
    - Determine the endpoint for the insert candidate API. http://localhost/-CamVoxVotingSystem/public/insert_candidate
