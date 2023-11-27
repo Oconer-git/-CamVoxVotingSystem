@@ -1,5 +1,5 @@
 RewriteEngine on
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} !-f
-RewriteRule . /-CamVoxVotingSystem/public/assets/endpoint/api_endpoints.php [L]
+RewriteRule . /-CamVoxVotingSystem/public/api_endpoints.php [L]
 
