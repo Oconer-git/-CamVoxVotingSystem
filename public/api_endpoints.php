@@ -260,7 +260,7 @@ Response if missing position in array
 }
 */
 
-///// Endpoint for showing positions on submitting election*
+///// Endpoint for showing positions on submitting election form and voting form*
 $app->post('/getPositions', function (Request $request, Response $response, array $args) use ($pdo) {
     $data = $request->getParsedBody();
 
