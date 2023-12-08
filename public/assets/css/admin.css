@@ -1,0 +1,324 @@
+
+  .dashboard {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #1f1f1f;
+  }
+
+  .logo-container {
+    height: 160px;
+    width: 280px;
+    margin-right: 50px;
+  }
+  
+  .logo-container img {
+    height: 160px;
+    width: 280px;
+  }
+
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    width: 100%;
+  }
+
+  .menu-container .bottom-left-container {
+    flex: 1;
+  }
+
+  .menu-button {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    margin-bottom: 10px;
+    text-decoration: none;
+    color: white;
+    border-radius: 5px;
+    text-align: center;
+    margin-right: 40px;
+  }
+  
+  .menu-button img {
+    margin-right: 15px;
+    height: 20px;
+  }
+  
+  .menu-button:hover {
+    color: #8c52ff;
+  }
+
+  .logout-container {
+    position: absolute;
+    bottom: 0;
+    margin-right: 120px;
+  }
+  
+  .logout-button {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    text-decoration: none;
+    color: white;
+    border-radius: 5px;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  
+  .logout-button img {
+    margin-right: 15px;
+    height: 20px;
+  }
+
+  /* Example styling */
+.search-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+  }
+  
+  /* Optional: Adjust the icon color */
+  .search-button img {
+    fill: #ffff; /* Change the color of the SVG to white */
+    margin-right: 8px; /* Add right margin */
+  }
+  
+  
+  .left-container {
+    flex: 0.6;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    height: 765px;
+    align-items: center;
+    position: relative;
+  }
+
+  .menu-left-container {
+    font-size: 15px;
+    width: 120px;
+    margin-right: 120px;
+  }
+  .menu-container {
+    display: flex;
+    margin-right: 120px;
+    margin-top: 20px;
+  }
+  .vertical-line {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 85%;
+    width: 1px;
+    background-color: #8d8d8d;
+  }
+  
+  .right-side {
+    flex: 2;
+    color: white;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .container-student {
+    position: absolute;
+    top: 51%;
+    left: 47%;
+    transform: translate(-50%, -50%);
+    background: linear-gradient(#1f1f1f, #1f1f1f) padding-box,
+    linear-gradient(to right, #497cff, #8c52ff) border-box;
+    border-radius: 2.5em;
+    border: 4px solid transparent;
+    transition: border 0.3s ease-in-out;
+    height: 90%;
+    width: 90%;
+    padding: 20px 20px 20px 20px;
+    overflow-y: auto; /* Add vertical scrollbar */
+    
+  }
+
+  .container-student::-webkit-scrollbar {
+    width: 8px; /* Width of the scrollbar */
+  }
+  
+  /* Handle */
+  .container-student::-webkit-scrollbar-thumb {
+    border-radius: 5px; /* Rounded corners */
+    background-color: transparent; /* Make scrollbar thumb transparent */
+  }
+  
+  /* Track */
+  .container-student::-webkit-scrollbar-track {
+    background-color: transparent; /* Sets the scrollbar track color to transparent */
+  }
+
+  .form-container {
+    display: flex;
+    flex-direction: column;
+    font-size: 15px;
+  }
+  
+
+    .form-columns {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        width: 900px;
+        font-size: 15px;
+        margin: 0 auto; /* Center the div horizontally */
+      }
+      
+
+    .form-column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    }
+
+    .action-buttons {
+        display: flex;
+        justify-content: center; /* Center the buttons */
+        margin-top: 20px; /* Adjust margin as needed */
+        margin-bottom: 20px;
+      }
+      
+      .action-buttons button {
+        margin-right: 20px;
+        padding: 10px 20px; /* Adjust button padding */
+        border: none;
+        border-radius: 5px;
+        background-color: #3498db; /* Button background color */
+        color: white; /* Button text color */
+        font-size: 16px; /* Button text size */
+        cursor: pointer;
+        transition: background-color 0.3s ease; /* Transition for hover effect */
+      }
+      
+      /* Specific styling for the delete button */
+      #deleteButton {
+        background-color: #e74c3c; /* Red color for the delete button */
+      }
+      
+      /* Hover effect */
+      .action-buttons button:hover {
+        background-color: #2980b9; /* Change background color on hover */
+      }
+      
+      /* Hover effect for the delete button */
+      #deleteButton:hover {
+        background-color: #c0392b; /* Darker red on hover for the delete button */
+      }
+      
+      
+    .action-buttons1 {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: right; /* Horizontally center */
+    align-items: center; /* Vertically center */
+    margin-bottom: 2%;
+    }
+
+    label {
+    margin-bottom: 5px;
+    }
+
+
+    #title-container {
+        font-size: 25px;
+    }
+
+    #studentData {
+        width: 100.1%;
+        height: 200px; /* Adjust height as needed */
+        overflow: auto;
+        border: 1px solid #ccc; /* Border around the table */
+        border-radius: 10px; /* Rounded corners */
+      }
+      
+      /* Style for the dynamically generated table within #studentData */
+      #studentData table {
+        width: calc(101.5% - 18px); /* Adjust width to account for scrollbar width */
+        border-collapse: collapse;
+        border:none;
+        font-size: 12px; 
+        
+      }
+      
+      #studentData table tr {
+        border: 1px solid #ccc;
+      }
+      
+      #studentData table td {
+        padding: 8px;
+        border: none; /* Remove borders */
+      }
+      
+      
+    /* Track */
+    #studentData::-webkit-scrollbar {
+        width: 8px; /* Width of the scrollbar */
+    }
+    
+    /* Track */
+    #studentData::-webkit-scrollbar-track {
+        background-color: transparent; /* Sets the scrollbar track color to transparent */
+    }
+    
+    /* Handle */
+    #studentData::-webkit-scrollbar-thumb {
+        background: #888; /* Color of the scrollbar handle */
+        border-radius: 10px; /* Creates a capsule-like shape */
+    }
+    
+    /* Handle on hover */
+    #studentData::-webkit-scrollbar-thumb:hover {
+        background: #555; /* Color of the scrollbar handle on hover */
+    }
+    
+/* Remove right border for the last cell in each row */
+    #studentData table tr td:last-child {
+    border-right: none;
+  }
+
+
+  /* Make input fields transparent and add border-radius */
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  border: 1px solid #ccc; /* Border color */
+  border-radius: 5px; /* Border radius */
+  padding: 8px; /* Padding inside the input fields */
+  background-color: transparent; /* Make the background transparent */
+  margin-bottom: 10px; /* Adjust margin as needed */
+}
+
+/* Hover and focus styles for input fields */
+input[type="text"]:hover,
+input[type="email"]:hover,
+input[type="password"]:hover,
+input[type="text"]:focus,
+input[type="password"]:focus {
+  outline: none; /* Remove default focus outline */
+  border-color: #3498db; /* Change border color on hover/focus */
+}
+
+.form-columns input[type="text"],
+.form-columns input[type="password"],
+.form-columns input[type="email"],
+.form-column input [type="text"]
+ {
+  color: white; /* Change the text color of text, password, and email input fields to white */
+}
+
+#searchId {
+    color: white; /* Change the text color to white */
+}
+

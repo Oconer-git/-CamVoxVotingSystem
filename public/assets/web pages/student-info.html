@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/admin.css"> 
+    <title>Student Information</title>
+</head>
+
+<body class="dashboard">
+  <div class="container">
+    <div class="left-container">
+        <div class="logo-container">
+            <img src="../img/camvox_logo.png" alt="Camvox Logo">
+        </div>
+
+
+        <div class="menu-container">
+            <div class="bottom-left-container">
+                <a href="#" class="menu-button">
+                    <img src="../img/menu.png" alt="Menu Icon">
+                    Elections
+                </a>
+                <a href="#" class="menu-button">
+                    <img src="../img/settings.png" alt="Settings Icon">
+                    Pending Elections
+                </a>
+                <a href="#" class="menu-button">
+                  <img src="../img/database.png" alt="Database Icon">
+                  Database
+              </a>
+            </div>
+        </div>
+
+        <div class="line2"></div>
+
+        <div class="logout-container">
+            <a href="#" class="logout-button"><img src="../img/logout.png" alt="Logout Icon">Logout</a>
+        </div>
+
+        <div class="vertical-line"></div>
+    </div>
+
+    <div class="right-side">
+      <div class="container-student">
+        <h1 id="title-container">Database</h1>
+        <div class="action-buttons1">    
+          <label for="searchId">Search ID:</label>
+          <input type="text" id="searchId" name="searchId">
+          <button onclick="searchAndDisplay()" class="search-button">
+              <img src="../img/search.png" alt="Search Icon" width="30px" height="30px">
+          </button>
+        </div>      
+        <div id="registrationStatus"></div>
+        <div id="registrationForm" class="form-container">
+          <div class="form-columns">
+            <div class="form-column">
+              <label for="id">ID:</label>
+              <input type="text" id="id" name="id">
+              
+              <label for="email">Email:</label>
+              <input type="email" id="email" name="email">
+              
+              <label for="fullname">Full Name:</label>
+              <input type="text" id="fullname" name="fullname">
+              
+              <label for="dob">Date of Birth:</label>
+              <input type="text" id="dob" name="dob">
+              
+              <label for="gender">Gender:</label>
+              <input type="text" id="gender" name="gender">
+            </div>
+            
+            <div class="form-column">
+              <label for="address">Address:</label>
+              <input type="text" id="address" name="address">
+              
+              <label for="course">Course:</label>
+              <input type="text" id="course" name="course">
+              
+              <label for="cpnum">Contact Number:</label>
+              <input type="text" id="cpnum" name="cpnum">
+              
+              <label for="pass">Password:</label>
+              <input type="password" id="pass" name="pass">
+              
+              <label for="college">College:</label>
+              <input type="text" id="college" name="college">
+            </div>
+          </div>
+          <div class="action-buttons">    
+            <button onclick="registerStudent()">Register</button>
+            <button onclick="updateStudent()">Update</button>
+            <button id="deleteButton" onclick="deleteStudent()">Delete</button>
+          </div>
+          
+          <div id="studentData"></div>
+        </div>
+      
+      </div>
+  
+    </div>
+  </div>
+
+
+  <script src="../js/admin.js"></script>
+</body>
+</html>
